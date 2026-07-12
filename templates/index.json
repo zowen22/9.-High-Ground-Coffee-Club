@@ -15,7 +15,7 @@
           "type": "text",
           "name": "t:names.text",
           "settings": {
-            "text": "<h1><em>Enrich </em>the<em> </em><br/>everyday</h1>",
+            "text": "<h1><em>A new origin</em><br/>every month</h1>",
             "width": "100%",
             "max_width": "narrow",
             "alignment": "left",
@@ -107,7 +107,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h3>Our bestsellers</h3>",
+                "text": "<h3>Coffee Subscriptions</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -132,7 +132,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Let your day be filled with what inspires you.</p>",
+                "text": "<p>Specialty-grade, single-origin coffee, freshly roasted and delivered on your schedule.</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -199,7 +199,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "coffee-subscriptions",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 8,
@@ -216,194 +216,6 @@
         "background_color": "{{ settings.color_palette.background }}",
         "padding-block-start": 48,
         "padding-block-end": 48
-      }
-    },
-    "featured_product_yEF9dK": {
-      "type": "featured-product",
-      "blocks": {
-        "media": {
-          "type": "_media-without-appearance",
-          "name": "t:names.product_media",
-          "static": true,
-          "settings": {
-            "media_type": "image",
-            "video_loop": true,
-            "video_autoplay": false,
-            "image_position": "cover",
-            "video_position": "cover"
-          },
-          "blocks": {}
-        },
-        "featured-product": {
-          "type": "_featured-product",
-          "name": "t:names.product",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "featured-product-title": {
-              "type": "product-title",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "featured-product-price": {
-              "type": "_featured-product-price",
-              "name": "t:names.price",
-              "static": true,
-              "settings": {
-                "show_sale_price_first": true,
-                "type_preset": "paragraph"
-              },
-              "blocks": {}
-            },
-            "featured-product-gallery": {
-              "type": "_featured-product-gallery",
-              "name": "t:names.image",
-              "static": true,
-              "settings": {
-                "image_ratio": "adapt",
-                "constrain_to_viewport": "contain"
-              },
-              "blocks": {}
-            },
-            "featured-product-swatches": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "static": true,
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": true,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "name": "t:names.featured_product",
-      "settings": {
-        "layout": "media-left",
-        "background_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "featured_product_kAzr6f": {
-      "type": "featured-product",
-      "blocks": {
-        "media": {
-          "type": "_media-without-appearance",
-          "name": "t:names.product_media",
-          "static": true,
-          "settings": {
-            "media_type": "image",
-            "video_loop": true,
-            "video_autoplay": false,
-            "image_position": "cover",
-            "video_position": "cover"
-          },
-          "blocks": {}
-        },
-        "featured-product": {
-          "type": "_featured-product",
-          "name": "t:names.product",
-          "static": true,
-          "settings": {},
-          "blocks": {
-            "featured-product-title": {
-              "type": "product-title",
-              "name": "t:names.title",
-              "static": true,
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "featured-product-price": {
-              "type": "_featured-product-price",
-              "name": "t:names.price",
-              "static": true,
-              "settings": {
-                "show_sale_price_first": true,
-                "type_preset": "paragraph"
-              },
-              "blocks": {}
-            },
-            "featured-product-gallery": {
-              "type": "_featured-product-gallery",
-              "name": "t:names.image",
-              "static": true,
-              "settings": {
-                "image_ratio": "adapt",
-                "constrain_to_viewport": "contain"
-              },
-              "blocks": {}
-            },
-            "featured-product-swatches": {
-              "type": "swatches",
-              "name": "t:names.swatches",
-              "static": true,
-              "settings": {
-                "product_swatches_alignment": "flex-start",
-                "product_swatches_alignment_mobile": "flex-start",
-                "hide_padding": true,
-                "product_swatches_padding_top": 4,
-                "product_swatches_padding_bottom": 0,
-                "product_swatches_padding_left": 0,
-                "product_swatches_padding_right": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
-      },
-      "name": "t:names.featured_product",
-      "settings": {
-        "layout": "media-right",
-        "background_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 0,
-        "padding-block-end": 0
       }
     },
     "product_list_nQbyNK": {
@@ -444,7 +256,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h5>Functional everyday essentials</h5>",
+                "text": "<h5>Give the gift of great coffee</h5>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -599,7 +411,7 @@
       },
       "name": "Featured collection",
       "settings": {
-        "collection": "all",
+        "collection": "gifts",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 4,
@@ -707,8 +519,6 @@
   "order": [
     "hero_irjTFL",
     "product_list_x9Yaab",
-    "featured_product_yEF9dK",
-    "featured_product_kAzr6f",
     "product_list_nQbyNK",
     "collection_list_bGtkjG"
   ]
