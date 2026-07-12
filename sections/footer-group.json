@@ -1,0 +1,152 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:names.footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu_hBUfAA": {
+          "type": "menu",
+          "name": "t:names.menu",
+          "settings": {
+            "menu": "footer",
+            "heading": "Shop",
+            "menu_spacing": 12,
+            "show_as_accordion": false,
+            "accordion_icon": "caret",
+            "accordion_dividers": false,
+            "heading_preset": "h5",
+            "link_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "menu_xAiPD3": {
+          "type": "menu",
+          "name": "t:names.menu",
+          "settings": {
+            "menu": "",
+            "heading": "About us",
+            "menu_spacing": 12,
+            "show_as_accordion": false,
+            "accordion_icon": "caret",
+            "accordion_dividers": false,
+            "heading_preset": "h5",
+            "link_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "email_signup_YEP4UY": {
+          "type": "email-signup",
+          "name": "t:names.email_signup",
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "heading": "Get your seat at the table",
+            "heading_preset": "h5",
+            "border_style": "all",
+            "input_style": "custom",
+            "border_width": 2,
+            "border_radius": 0,
+            "input_text_color": "{{ settings.color_palette.foreground }}",
+            "input_border_color": "rgba(0,0,0,0)",
+            "input_type_preset": "h5",
+            "style_class": "button",
+            "display_type": "text",
+            "label": "SUBSCRIBE",
+            "integrated_button": false,
+            "button_type_preset": "h5",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "menu_hBUfAA",
+        "menu_xAiPD3",
+        "email_signup_YEP4UY"
+      ],
+      "name": "t:names.footer",
+      "settings": {
+        "section_width": "page-width",
+        "gap": 24,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 32,
+        "padding-block-end": 64
+      }
+    },
+    "utilities": {
+      "type": "footer-utilities",
+      "blocks": {
+        "footer_copyright_YdKQ3x": {
+          "type": "footer-copyright",
+          "name": "t:names.copyright",
+          "settings": {
+            "show_powered_by": true,
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "footer_policy_list_ErQM9U": {
+          "type": "footer-policy-list",
+          "name": "t:names.policy_list",
+          "settings": {
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "social_links_W6LiWP": {
+          "type": "social-links",
+          "name": "t:names.social_media_links",
+          "settings": {
+            "facebook_url": "https://www.facebook.com",
+            "instagram_url": "https://www.instagram.com",
+            "youtube_url": "https://www.youtube.com",
+            "tiktok_url": "https://www.tiktok.com",
+            "twitter_url": "https://www.twitter.com"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "footer_copyright_YdKQ3x",
+        "footer_policy_list_ErQM9U",
+        "social_links_W6LiWP"
+      ],
+      "settings": {
+        "section_width": "page-width",
+        "gap": 24,
+        "divider_thickness": 1,
+        "divider_color": "{{ settings.color_palette.color1 }}",
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 12,
+        "padding-block-end": 16
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "utilities"
+  ]
+}
