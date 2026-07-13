@@ -44,9 +44,9 @@
       "name": "Hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "photo-1511537190424-bbbab87ac5eb.jpg",
+        "image_1": "shopify://shop_images/photo-1511537190424-bbbab87ac5eb.jpg",
         "media_type_2": "image",
-        "image_2": "photo-1565650839149-2c48a094196c.jpg",
+        "image_2": "shopify://shop_images/photo-1565650839149-2c48a094196c.jpg",
         "link": "shopify://collections",
         "open_in_new_tab": false,
         "content_direction": "column",
