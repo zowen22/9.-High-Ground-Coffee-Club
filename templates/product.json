@@ -420,7 +420,7 @@
                     "accordion_row_WyAjHK": {
                       "type": "_accordion-row",
                       "settings": {
-                        "heading": "CARE & MAINTENANCE",
+                        "heading": "STORAGE & FRESHNESS",
                         "open_by_default": false,
                         "icon": "none",
                         "width": 20
@@ -429,7 +429,7 @@
                         "text_UfENHV": {
                           "type": "text",
                           "settings": {
-                            "text": "<p>To maintain the beauty and integrity of your purchase, we recommend treating it with care. Simple maintenance practices, such as gentle washing and proper storage, can effectively preserve the longevity of your favorites. We encourage you to refer to the care instructions included with each item, designed to help you keep your purchase in top condition.</p>",
+                            "text": "<p>For the best cup, keep your coffee in an airtight container away from light, heat, and moisture. We recommend brewing within a few weeks of the roast date for peak flavor — whole bean holds its freshness longer than pre-ground.</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "left",
@@ -468,7 +468,7 @@
                         "text_6rQYtf": {
                           "type": "text",
                           "settings": {
-                            "text": "<p>We strive to process and ship all orders in a timely manner, working diligently to ensure that your items are on their way to you as soon as possible. Need to return something? Just let us know. </p>",
+                            "text": "<p>We roast to order and ship promptly so your coffee arrives fresh. Pause, skip, or cancel your subscription anytime from your account. Need help with an order? Just let us know.</p>",
                             "width": "100%",
                             "max_width": "normal",
                             "alignment": "left",
@@ -540,6 +540,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "image": "photo-1757688341368-abf5f34392e4.jpg",
             "video_loop": true,
             "video_autoplay": false,
             "image_position": "cover",
@@ -560,7 +561,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Embracing small joys</h2>",
+                "text": "<h2>Freshly roasted, just for you</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -585,7 +586,7 @@
             "text_nnymP7": {
               "type": "text",
               "settings": {
-                "text": "<p>Each item is designed to blend harmoniously with your living space while adding a unique touch. We aspire to bring balance and enrichment to everyday life.</p>",
+                "text": "<p>Every bag is roasted to order and shipped within days, so what arrives at your door is as close to peak freshness as coffee gets. No sitting on a shelf, no guessing at a roast date.</p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
