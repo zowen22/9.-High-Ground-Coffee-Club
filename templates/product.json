@@ -31,6 +31,20 @@
           },
           "blocks": {}
         },
+        "subscriptions_app_block_UPXP3A": {
+          "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+          "settings": {
+            "widget_style": "card",
+            "widget_style_card_selector": "radio_button",
+            "subscription_policy_url": "",
+            "color_text_body": "#6D7175",
+            "dividers_color": "#8F8D8D",
+            "background_color": "#FFFFFF",
+            "border_thickness": 1,
+            "border_radius": 0,
+            "product": "{{product}}"
+          }
+        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
@@ -318,6 +332,20 @@
                   },
                   "blocks": {}
                 },
+                "subscriptions_app_block_h4ffPp": {
+                  "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+                  "settings": {
+                    "widget_style": "card",
+                    "widget_style_card_selector": "radio_button",
+                    "subscription_policy_url": "",
+                    "color_text_body": "#6D7175",
+                    "dividers_color": "#8F8D8D",
+                    "background_color": "#FFFFFF",
+                    "border_thickness": 1,
+                    "border_radius": 0,
+                    "product": "{{closest.product}}"
+                  }
+                },
                 "variant_picker_nhbWcG": {
                   "type": "variant-picker",
                   "settings": {
@@ -510,6 +538,7 @@
                 "group_xr9GGL",
                 "divider_grFKCP",
                 "product_description_8gHdXj",
+                "subscriptions_app_block_h4ffPp",
                 "variant_picker_nhbWcG",
                 "buy_buttons_B7HMzq",
                 "accordion_jjaG39"
@@ -522,7 +551,8 @@
         }
       },
       "block_order": [
-        "disclosures_W8MLmt"
+        "disclosures_W8MLmt",
+        "subscriptions_app_block_UPXP3A"
       ],
       "settings": {
         "content_width": "content-center-aligned",
