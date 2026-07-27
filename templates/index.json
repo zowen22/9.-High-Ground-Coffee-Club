@@ -37,10 +37,53 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "text_freeship_1": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Free shipping on orders over $70.</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "var(--font-size--body-md)",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "{{ settings.color_palette.background }}",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_startsub": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Start your subscription",
+            "link": "shopify://collections/coffee-subscriptions",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text_CXHmij"
+        "text_CXHmij",
+        "text_freeship_1",
+        "button_startsub"
       ],
       "name": "Hero",
       "settings": {
@@ -51,7 +94,7 @@
         "custom_mobile_media": false,
         "media_type_1_mobile": "image",
         "media_type_2_mobile": "image",
-        "link": "shopify://collections",
+        "link": "shopify://collections/coffee-subscriptions",
         "open_in_new_tab": false,
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -526,7 +569,11 @@
       "block_order": [],
       "name": "t:names.collections_grid",
       "settings": {
-        "collection_list": [],
+        "collection_list": [
+          "gid://shopify/Collection/693781823569",
+          "gid://shopify/Collection/693631582289",
+          "gid://shopify/Collection/693631516753"
+        ],
         "layout_type": "grid",
         "carousel_on_mobile": true,
         "columns": 3,
