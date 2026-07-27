@@ -71,6 +71,11 @@ Your **Privacy policy is publicly published right now** with your street address
 
 > "please call **+1 330-614-2860** or email us at customadditiveengineering@gmail.com or contact us at **1150 Overlook Dr, Alliance OH 44601, United States**"
 
-Shopify auto-fills those from **Settings → Store details**. You said you don't want an address or phone on the store. Change them there (a PO box and a forwarding number work) and the policy text updates itself — the merge tags re-render.
+Shopify auto-fills those from **Settings → Store details** (currently `1150 Overlook Dr, Alliance, Ohio 44601` with phone `13306142860` on the shop's billing address). Change them there and the policy text updates itself — the merge tags re-render on the next view.
 
-Note that Shopify requires *some* business contact information for a live store, and several jurisdictions require a contact address in a privacy policy, so removing them entirely may not be an option. A PO box is the usual answer.
+**Claude cannot do this for you.** Verified 2026-07-27 by enumerating the full Admin GraphQL `Mutation` type: the only shop-level mutations that exist are `shopLocaleEnable` / `shopLocaleDisable` / `shopLocaleUpdate`, `shopPolicyUpdate` (blocked — missing scope), and `shopResourceFeedbackCreate`. There is **no mutation for store details, business address, or store phone** — same permanent dead end as the domain settings. Admin UI only.
+
+Two constraints worth knowing before you go in:
+
+1. **You probably can't blank them.** Shopify requires a business address for a live store, and several jurisdictions require a contact address in a privacy policy. A **PO box** plus a forwarding or Google Voice number is the normal answer — replace rather than delete.
+2. **There may be two addresses to change.** The billing address (shown above) is what the policy is pulling. Shopify also has a separate store/sender address in some setups. Check both while you're in there.

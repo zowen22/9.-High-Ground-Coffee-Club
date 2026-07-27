@@ -27,7 +27,7 @@ The homepage today is a hero and two product rows. The audit flagged it as thin 
 **F2 — what the benchmark leads with**, recorded in Technical Reference § "Reference Site Notes — atlascoffeeclub.com" and Site Map:
 - Value props: single origin / freshly roasted / curated / sustainable
 - A 3-step "how it works" summary
-- Box contents: 12 oz bag, tasting notes, postcard from the origin country, coffee history
+- Box contents: 12 oz bag, tasting notes, postcard from the origin country, coffee history — **we ship coffee only** (owner, 2026-07-27); the inserts are Atlas's, not ours
 - Flexibility messaging: "Pause, skip, or cancel anytime"; free U.S. shipping
 - A 30-Day Money Back Guarantee — **excluded by owner instruction**
 - Press mentions: New York Magazine, BuzzFeed, Eater, Boston Globe — **these are Atlas's press, not ours**
@@ -50,7 +50,7 @@ Add four sections to `templates/index.json`, in this order, between the hero and
 
 1. **Value props** — four short items: rotating single origin / roasted to order / your roast profile, your grind / flexible subscription.
 2. **How it works** — three steps: pick your roast profile and format → we roast and ship on your schedule → pause, skip, or cancel anytime.
-3. **What's in the box** — see the Stop Condition before writing this one.
+3. **What's in the box** — coffee only. See step 5 for the exact copy, and the first Stop Condition for what must not creep in.
 4. **Flexibility strip** — "Pause, skip, or cancel anytime" and "Free shipping on orders over $70."
 
 ### Out — seen and deliberately left alone
@@ -88,6 +88,12 @@ Work directly on `main`.
    2. *We roast and ship* — Fresh coffee goes out on your schedule, delivered to your door.
    3. *Stay in control* — Pause, skip, or cancel anytime from your account.
 
+   **What's in the box** — heading `What arrives at your door`, body:
+
+   `<p>One rotating single-origin coffee, roasted after you order it and shipped straight to you — in the roast profile, format, and grind you picked. That's it: no filler, no gimmicks, just coffee worth waking up for.</p>`
+
+   Nothing beyond the coffee itself may be described here. See Stop Conditions.
+
    **Flexibility strip:** `Pause, skip, or cancel anytime · Free shipping on orders over $70`
 
 6. Validate: `python3 -c "import json,re; json.loads(re.sub(r'/\*.*?\*/','',open('templates/index.json').read(),flags=re.S)); print('ok')"`. Preserve any `/* */` comment header already in the file.
@@ -98,7 +104,7 @@ Work directly on `main`.
 
 Stop, set Status `Blocked`, record it, and ask the user if:
 
-- **"What's in the box" requires an unconfirmed promise.** Atlas's box contains a postcard from the origin country and a coffee-history insert. **We have never committed to shipping either.** Writing that section as Atlas has it would promise physical inserts the fulfillment side may not produce. Ask the owner what actually goes in the box before writing it. Until answered, you may state only what is certainly true: a bag of freshly roasted single-origin coffee in the roast profile and grind they chose. If the answer doesn't arrive, ship the other three sections and leave this one out — do not invent the contents.
+- **You are about to describe anything in the box other than coffee.** The owner confirmed on 2026-07-27: **just coffee for now.** Atlas's box also contains a postcard from the origin country and a coffee-history insert — we ship neither, and promising them would be a promise the fulfillment side cannot keep. No postcard, no tasting-notes card, no insert, no sticker, no "little extras." Step 5's copy is the ceiling on what this section may claim.
 - **You need a testimonial, a press logo, or a star rating** to make a section render. Skip the section instead and say so.
 - **The free-shipping threshold or the 10% discount doesn't verify** against the live store. Do not publish a number you haven't checked.
 - **Vessel has no suitable section type** for one of the four and the only path is writing new Liquid. That is a bigger change than this handoff authorizes.
@@ -106,10 +112,11 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 
 ## Definition of Done
 
-- [ ] `templates/index.json` contains the value-props, how-it-works, and flexibility sections, plus the box section or a recorded reason it was omitted
+- [ ] `templates/index.json` contains all four sections: value props, how it works, what's in the box, flexibility strip
 - [ ] `grep -rniE "money.?back|risk.free|satisfaction guaranteed|as seen in|new york magazine|buzzfeed|eater|boston globe" templates/ sections/` returns nothing
 - [ ] No testimonial, star rating, or review count appears anywhere in `templates/index.json`
 - [ ] Every claim in the new copy traces to F3 in this document
+- [ ] `grep -niE "postcard|insert|tasting note card|booklet|sticker" templates/index.json` returns nothing
 - [ ] No new file was created in `sections/` or `blocks/`
 - [ ] JSON validity check from step 6 prints `ok`
 - [ ] `git show --stat HEAD` shows only `templates/index.json` changed
