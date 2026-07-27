@@ -19,7 +19,7 @@
           "name": "t:names.menu",
           "settings": {
             "menu": "footer",
-            "heading": "Shop",
+            "heading": "Help & Info",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
@@ -37,8 +37,8 @@
           "type": "menu",
           "name": "t:names.menu",
           "settings": {
-            "menu": "",
-            "heading": "About us",
+            "menu": "main-menu",
+            "heading": "Shop",
             "menu_spacing": 12,
             "show_as_accordion": false,
             "accordion_icon": "caret",
@@ -58,7 +58,7 @@
           "settings": {
             "width": "fill",
             "custom_width": 100,
-            "heading": "Get your seat at the table",
+            "heading": "Fresh coffee, first dibs",
             "heading_preset": "h5",
             "border_style": "all",
             "input_style": "custom",
