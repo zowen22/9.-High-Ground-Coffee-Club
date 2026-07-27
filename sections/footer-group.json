@@ -115,24 +115,11 @@
             "case": "none"
           },
           "blocks": {}
-        },
-        "social_links_W6LiWP": {
-          "type": "social-links",
-          "name": "t:names.social_media_links",
-          "settings": {
-            "facebook_url": "https://www.facebook.com",
-            "instagram_url": "https://www.instagram.com",
-            "youtube_url": "https://www.youtube.com",
-            "tiktok_url": "https://www.tiktok.com",
-            "twitter_url": "https://www.twitter.com"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "footer_copyright_YdKQ3x",
-        "footer_policy_list_ErQM9U",
-        "social_links_W6LiWP"
+        "footer_policy_list_ErQM9U"
       ],
       "settings": {
         "section_width": "page-width",

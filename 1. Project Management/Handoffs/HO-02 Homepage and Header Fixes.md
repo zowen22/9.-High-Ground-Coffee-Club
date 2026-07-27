@@ -18,7 +18,7 @@ Brown Bag Coffee Club is a Shopify coffee-subscription storefront on the **Vesse
 
 Separately: the store's delivery profile grants **free Standard shipping on domestic orders of $70 or more**. Nothing on the storefront says so. Average cart value sits well under that for a single bag, so surfacing the threshold is a direct nudge toward multi-bag orders.
 
-Pushing to `main` syncs to the live storefront, and the sync is bidirectional — `shopify[bot]` commits Admin theme-editor edits back to `main`. Develop and push on `claude/website-production-audit-yv6dkg`, not `main`. Rebase on `origin/main` before starting if bot commits have landed.
+**This project works directly on `main`.** Pushing to `main` syncs straight to the live storefront, and the sync is bidirectional — `shopify[bot]` commits Admin theme-editor edits back to `main`. Always `git pull origin main` immediately before editing and again before pushing, so you don't clobber a bot commit or get clobbered by one.
 
 ## Findings / Evidence
 
@@ -49,9 +49,9 @@ Pushing to `main` syncs to the live storefront, and the sync is bidirectional �
 
 ## Implementation Plan
 
-Work on branch `claude/website-production-audit-yv6dkg`.
+Work directly on `main`.
 
-1. `git fetch origin main && git log origin/main --oneline -5`. Rebase onto `origin/main` if `shopify[bot]` commits have landed since your branch point.
+1. `git pull origin main && git log --oneline -5`. Note any recent `shopify[bot]` commits so you know the live theme's state matches what you are about to edit.
 
 2. Confirm F1 and F2 still hold. Read `templates/index.json` and check `collection_list_bGtkjG` has `"block_order": []` and that `hero_irjTFL` has exactly one block.
 
@@ -71,11 +71,11 @@ Work on branch `claude/website-production-audit-yv6dkg`.
 
    One placement only. Do not also add an announcement bar, a cart progress bar, or PDP messaging — those are separate surfaces with their own considerations, and duplicating the claim in four places is how a stale promise ends up shipping after the threshold changes.
 
-6. **F4 — investigate before changing.** Determine whether the store has more than one active Market. If it does not, set `show_country: false` and `show_language: false` in `sections/header-group.json`. If it does — or if you cannot determine it — **leave both settings alone** and report the finding. Do not guess.
+6. **F4 — set both to false.** Verified 2026-07-27: the store has exactly one Market ("United States", primary, enabled), and the international shipping zone was deleted the same day — this is a US-only store. Set `show_country: false` and `show_language: false` in `sections/header-group.json`.
 
 7. Validate: `python3 -c "import json,re; [json.loads(re.sub(r'/\*.*?\*/','',open(f).read(),flags=re.S)) for f in ['templates/index.json','sections/header-group.json']]; print('ok')"`. These templates may contain `/* */` comments; preserve them, do not write back the stripped version.
 
-8. Commit and push to `claude/website-production-audit-yv6dkg`.
+8. Commit, `git pull origin main` once more, then `git push -u origin main`.
 
 ## Stop Conditions
 
@@ -84,7 +84,7 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 - **The $70 threshold doesn't verify.** Step 5 publishes a shipping promise. Confirm against the store's live delivery profile (Domestic zone, the `$0.00` Standard rate's `TOTAL_PRICE >= 70` condition) before writing the line. If the number differs or the free rate is gone, do not publish a number.
 - **The collection-card schema can't be satisfied and deleting the section also seems wrong** — e.g. the section turns out to be referenced elsewhere.
 - **You are tempted to add a homepage section** that isn't F1/F2/F3. That impulse is correct in substance and out of scope here — log it under Follow-ups instead.
-- **Markets configuration is ambiguous** for F4. Leaving the selectors on is the safe outcome; say so and move on rather than blocking the whole handoff.
+- **The store turns out to have more than one Market** for F4, contradicting the 2026-07-27 verification. Leave the selectors alone and report it rather than blocking the whole handoff.
 - **A `shopify[bot]` commit reverts your changes** after push. Do not re-apply in a loop.
 
 ## Definition of Done
@@ -94,10 +94,10 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 - [ ] `grep -n "Free shipping on orders over \$70" templates/index.json` returns exactly one match
 - [ ] `grep -rn "Free shipping" templates/ sections/` returns exactly one match total — the claim appears in one place only
 - [ ] Every collection handle referenced in `index.json` is one of `coffee-subscriptions`, `gifts`, `decaf` — verify none point at `all` or `frontpage`
-- [ ] F4 either changed with justification, or left alone with the reason stated in the Execution Report
+- [ ] `show_country` and `show_language` are both `false` in `sections/header-group.json`
 - [ ] JSON validity check from step 7 prints `ok`
-- [ ] `git diff origin/main --stat` shows at most two files changed
-- [ ] Pushed to `claude/website-production-audit-yv6dkg`
+- [ ] `git show --stat HEAD` shows at most two files changed
+- [ ] Pushed to `main`
 - [ ] Execution Report filled in
 - [ ] Status updated to `Done`
 
