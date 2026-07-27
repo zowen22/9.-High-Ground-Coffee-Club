@@ -99,12 +99,12 @@ Worth recording so a later session doesn't re-audit it: all 6 products Active wi
 
 | Handoff | Covers | Priority | Parallel-safe |
 |---------|--------|----------|---------------|
-| HO-01 — Purge Vessel demo copy | P1-1, P1-2, P1-3, P2-8 | High | Yes |
-| HO-02 — Homepage and header fixes | P1-5, P2-3, P2-4, P2-12 | High | Yes |
-| HO-03 — Fix collection description escaping | P1-4 | High | Yes |
-| HO-04 — Contact form and demo-artifact cleanup | P1-7, P2-11 | Medium | Yes |
-| HO-05 — Build out homepage to match Atlas | P2-2 | Medium | No — after HO-02 |
-| HO-06 — Gift note on Gift Subscription | P2-6 | Medium | No — after HO-01 |
+| HO-01 — Purge Vessel demo copy | P1-1, P1-2, P1-3, P2-8 | High | **Done** (2026-07-27) |
+| HO-02 — Homepage and header fixes | P1-5, P2-3, P2-4, P2-12 | High | **Done** (2026-07-27) |
+| HO-03 — Fix collection description escaping | P1-4 | High | **Done** (2026-07-27) |
+| HO-04 — Contact form and demo-artifact cleanup | P1-7, P2-11 | Medium | **Blocked** (2026-07-27) — F1/F2 done, F3 needs a manual Admin click |
+| HO-05 — Build out homepage to match Atlas | P2-2 | Medium | Open — depends on HO-02 (now Done, so unblocked) |
+| HO-06 — Gift note on Gift Subscription | P2-6 | Medium | Open — depends on HO-01 (now Done, so unblocked) |
 
 HO-01 through HO-04 are parallel-safe against each other: HO-01 owns `templates/product.json` + `sections/footer-group.json`, HO-02 owns `templates/index.json` + `sections/header-group.json`, and HO-03/HO-04 touch no repo files at all. HO-05 must wait for HO-02 (same file); HO-06 must wait for HO-01 (it copies `product.json`, which HO-01 fixes).
 

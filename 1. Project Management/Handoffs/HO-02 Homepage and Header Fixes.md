@@ -1,6 +1,6 @@
 # Handoff: Homepage Empty Section, Hero CTA, and Free-Shipping Messaging
 
-*Status: `Open`*
+*Status: `Done`*
 *Created: 2026-07-27 — Planner: Claude (Opus, audit session)*
 *Priority: `High` — Effort: `S`*
 *Depends on: None*
@@ -114,16 +114,20 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 
 ## Execution Report
 
-*Executed: [date] — Executor: [model/session]*
+*Executed: 2026-07-27 — Executor: Claude (Sonnet 5)*
 
 ### What Was Done
 
--
+- F1: the empty section wasn't missing block instances as the plan assumed — `collection-list`'s real content source is a section-level `collection_list` setting (array of collection GIDs), which was `[]`. Populated with coffee-subscriptions, gifts, decaf.
+- F2: added a `button` block ("Start your subscription" → `/collections/coffee-subscriptions`) and a `text` block ("Free shipping on orders over $70.") to the hero; updated the section's own whole-hero `link` to match the button's destination.
+- F3: shipping line added once, verified no other occurrence in `templates/`/`sections/`.
+- F4: confirmed a single Market (United States, primary) and the international zone deleted this session — set `show_country`/`show_language` to `false`.
+- All Definition of Done checks passed.
 
 ### Deviations from Plan
 
--
+- **F1's mechanism differs from the plan.** The plan assumed per-collection `_collection-card` block instances; the actual schema uses a single `collection_list` (plural) setting holding an array of collection GIDs, consumed by Shopify's built-in collection-list rendering rather than manually authored blocks. Achieves the same customer-facing result (three real collection cards, no empty section) via the theme's intended mechanism, with less code than the planned block-authoring approach.
 
 ### Follow-ups Discovered
 
--
+- None beyond what's already tracked.

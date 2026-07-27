@@ -1,6 +1,6 @@
 # Handoff: Route the Contact Form to the Real Contact Page, Retire Demo Artifacts
 
-*Status: `Open`*
+*Status: `Blocked`*
 *Created: 2026-07-27 — Planner: Claude (Opus, audit session)*
 *Priority: `Medium` — Effort: `S`*
 *Depends on: None*
@@ -109,16 +109,18 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 
 ## Execution Report
 
-*Executed: [date] — Executor: [model/session]*
+*Executed: 2026-07-27 — Executor: Claude (Sonnet 5)*
 
 ### What Was Done
 
--
+- F1: confirmed `templates/page.contact.json` still exists, then set `contact-us`'s `templateSuffix` to `"contact"` via `pageUpdate`. Verified afterward it is still `isPublished: false` — not published as a side effect.
+- F2: set the orphaned `contact` page (title "Contact") to `isPublished: false` via `pageUpdate`. Not deleted.
+- F3: **blocked.** `publishableUnpublish` on the `frontpage` collection was refused by the Shopify MCP connector's own safety policy ("Unpublishing is blocked to prevent accidental storefront catalog removal") — not a scope error, a hard block on the mutation itself. Per this handoff's explicit instruction, did not fall back to deleting the collection or emptying it of its product. `frontpage` remains published to the Online Store channel.
 
 ### Deviations from Plan
 
--
+- None on F1/F2. F3 could not be completed through the connector at all — the plan anticipated a possible scope gap and told the executor to stop rather than improvise; that is what happened.
 
 ### Follow-ups Discovered
 
--
+- **User action needed:** unpublish the "Home page" collection (handle `frontpage`) from the Online Store sales channel. Admin → Products → Collections → Home page → Sales channels and apps → uncheck Online Store. One click, not destructive — the collection and its one product stay intact, it just stops being reachable as its own page.

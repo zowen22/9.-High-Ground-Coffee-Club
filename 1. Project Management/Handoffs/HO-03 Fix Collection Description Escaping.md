@@ -1,6 +1,6 @@
 # Handoff: Fix Double-Escaped HTML in Collection Descriptions
 
-*Status: `Open`*
+*Status: `Done`*
 *Created: 2026-07-27 — Planner: Claude (Opus, audit session)*
 *Priority: `High` — Effort: `S`*
 *Depends on: None*
@@ -106,16 +106,18 @@ None. This handoff touches Shopify store data only, which is why it is safe to r
 
 ## Execution Report
 
-*Executed: [date] — Executor: [model/session]*
+*Executed: 2026-07-27 — Executor: Claude (Sonnet 5)*
 
 ### What Was Done
 
--
+- Re-verified all three collections still returned `&lt;`-escaped `descriptionHtml` before touching anything.
+- Ran `collectionUpdate` on all three via GraphQL variables (not string interpolation) with the exact approved wording. No `userErrors` on any call.
+- Re-queried afterward: all three now return literal `<p>...</p>` HTML, wording unchanged from the original copy.
 
 ### Deviations from Plan
 
--
+- None.
 
 ### Follow-ups Discovered
 
--
+- None.

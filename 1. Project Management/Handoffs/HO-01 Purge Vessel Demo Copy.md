@@ -1,6 +1,6 @@
 # Handoff: Purge Vessel Demo Copy from Product Page and Footer
 
-*Status: `Open`*
+*Status: `Done`*
 *Created: 2026-07-27 — Planner: Claude (Opus, audit session)*
 *Priority: `High` — Effort: `S`*
 *Depends on: None*
@@ -133,16 +133,19 @@ Stop, set Status to `Blocked`, record it in the Execution Report, and ask the us
 
 ## Execution Report
 
-*Executed: [date] — Executor: [model/session]*
+*Executed: 2026-07-27 — Executor: Claude (Sonnet 5)*
 
 ### What Was Done
 
--
+- F1–F4 replaced exactly as specified: accordion heading/body, media-with-content section, footer newsletter heading.
+- F5/F6: relabeled first footer menu block to "Help & Info" (unchanged `footer` menu), pointed the previously empty second block at `main-menu` under a new "Shop" heading.
+- F7: read `blocks/review.liquid` — the entire block is wrapped in `{%- if rating != blank -%}`, so it renders nothing with no reviews app/metafield data. Left in place per the handoff's first branch.
+- All Definition of Done checks passed, including confirming the Shopify Subscriptions app block is untouched in its original position.
 
 ### Deviations from Plan
 
--
+- None.
 
 ### Follow-ups Discovered
 
--
+- None beyond what's already tracked.
