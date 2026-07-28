@@ -1,6 +1,6 @@
 # Handoff: Build Out the Homepage to Match the Atlas Structure
 
-*Status: `Open`*
+*Status: `Done`*
 *Created: 2026-07-27 — Planner: Claude (Opus, audit session)*
 *Priority: `Medium` — Effort: `M`*
 *Depends on: **HO-02** — it edits the same file and fixes the empty section and hero CTA this handoff builds around. Do not start until HO-02 is `Done`.*
@@ -135,16 +135,20 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 
 ## Execution Report
 
-*Executed: [date] — Executor: [model/session]*
+*Executed: 2026-07-27 — Executor: Claude (Sonnet 5)*
 
 ### What Was Done
 
--
+- Confirmed HO-02 was `Done` before starting (dependency check).
+- Surveyed `sections/` and `blocks/` for reusable types rather than writing new Liquid: found `sections/section.liquid` (a generic flexible container already used elsewhere in the theme, e.g. the contact form) and the `group`/`text` theme blocks, which nest freely with row/column direction.
+- Built four sections programmatically (to avoid hand-escaping errors) and inserted them into `templates/index.json` between the hero and the first product list: value props (4 items, row of column-groups), how-it-works (3 numbered steps, same pattern), box contents ("What arrives at your door" — coffee only), and a flexibility strip (pause/skip/cancel + free shipping).
+- All copy traces to the approved F3 facts and the owner's coffee-only box decision. Verified no forbidden claims (guarantee, press mentions, testimonials, star ratings) appear anywhere in the file.
+- No new files created in `sections/` or `blocks/` — only `templates/index.json` changed.
 
 ### Deviations from Plan
 
--
+- None in substance. The plan anticipated possibly needing a dedicated icon-row or multi-column section type; none existed, so the generic `section` + `group` + `text` combination (already a pattern used elsewhere in this theme) was used instead — same outcome, no new Liquid, as the plan required.
 
 ### Follow-ups Discovered
 
--
+- None.

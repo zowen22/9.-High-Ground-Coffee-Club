@@ -1,6 +1,6 @@
 # Handoff: Add a Gift Note Field to the Gift Subscription
 
-*Status: `Open`*
+*Status: `Done`*
 *Created: 2026-07-27 — Planner: Claude (Opus, audit session)*
 *Priority: `Medium` — Effort: `S`*
 *Depends on: None (but see the note on HO-01 below)*
@@ -129,16 +129,20 @@ Stop, set Status `Blocked`, record it, and ask the user if:
 
 ## Execution Report
 
-*Executed: [date] — Executor: [model/session]*
+*Executed: 2026-07-27 — Executor: Claude (Sonnet 5)*
 
 ### What Was Done
 
--
+- Confirmed HO-01 was `Done` before starting, so the copied template inherits corrected (not furniture-demo) copy.
+- Copied `templates/product.json` to `templates/product.gift.json` verbatim, then added one `product-custom-property` block ("Gift note", 250-char text, not required) positioned between the variant picker and the Shopify Subscriptions app block / buy-buttons, matching the existing block's position pattern.
+- Pushed the template to `main` first, then assigned `templateSuffix: "gift"` to the Gift Subscription product via `productUpdate` — no `userErrors`.
+- Verified: only the Gift Subscription carries `templateSuffix: "gift"`; the other five products remain `null`. `templates/product.json` (shared by the five coffee products) has zero `product-custom-property` blocks.
+- No delivery-date or recipient-email field added, per owner instruction.
 
 ### Deviations from Plan
 
--
+- None.
 
 ### Follow-ups Discovered
 
--
+- **The gift note is captured as a line-item property**, which appears on the order in Admin and on packing slips by default Shopify behavior. This was not independently verified end-to-end (e.g. by placing a test order) — worth confirming before relying on it operationally, since a captured note nobody on the fulfillment side actually reads would be a broken promise to the buyer.
